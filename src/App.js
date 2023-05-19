@@ -1,35 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './Home';
-import Header from './components/Header';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Addandupdate from './Addandupdate';
+import React from "react";
+import Header from "./components/Header";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Suspense } from "react";
+import "./App.css";
+
+const Home = React.lazy(() => import("./Pages/Home"));
+const Addandupdate = React.lazy(() => import("./Pages/Addandupdate"));
 
 const router = createBrowserRouter([
   {
     path: "/addrecord",
-    element: <Addandupdate/>,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Addandupdate />
+      </Suspense>
+    ),
   },
   {
     path: "/updaterecord/:id",
-    element: <Addandupdate/>,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Addandupdate />
+      </Suspense>
+    ),
   },
   {
     path: "/",
-    element: <Home/>,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Home />
+      </Suspense>
+    ),
   },
 ]);
 
 function App() {
   return (
     <>
-    <Header />
-    
-        <RouterProvider router={router} />
-        </>
+      <Header />
+      <RouterProvider router={router} />
+    </>
   );
 }
 
