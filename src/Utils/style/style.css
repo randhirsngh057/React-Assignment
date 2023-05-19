@@ -1,0 +1,65 @@
+body{
+    background: #f8f9fa;
+  }
+  .bg-white{
+  background: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  margin-bottom: 80px;
+  }
+  .mr-10{ margin-right: 10px;}
+  .action-width{ width: 200px;}
+  .delete-icons{ 
+    text-align: center; 
+  }
+  .popup-info{
+    font-size: 25px;
+    color: #333;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .popup-info-m{
+    color: #333;
+    text-align: center;
+    margin-top: 18px;
+    width: 80%;
+    margin: auto;
+  }
+  .delete-icons img{
+    width: 80px;
+  }
+  .popup-action{
+    text-align: center;
+    padding: 20px;
+  }
+  .popup-action Button{
+    margin:5px;
+  }
+  
+  .user-form{
+    width: 740px;
+    max-width: 98%;
+    margin: auto auto 80px auto;
+    background: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      padding: 20px;
+  
+  }
+  .user-form .page-title{
+    margin-bottom: 0px;
+  }
+  .user-form-btn{ margin-top: 30px;}
+  .user-form .form-group{
+    padding-top: 20px;
+  }
+  .page-title{ display: flex; justify-content: space-between; margin-bottom: 20px;}
+  
+  .auto-scroll{ overflow: auto;}
+  .action-btn{
+    display: flex;
+  }
+  .error{ color: red; font-size: 12px; position: absolute;}
+  .menu-bg{ background: #0d6efd; margin-bottom: 20px;}
+  .menu-bg .navbar-brand{ color: #fff; font-size: 25px;}
+  .no-records{ padding: 10px; color: red;}
+  

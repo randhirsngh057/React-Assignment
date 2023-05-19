@@ -1,4 +1,3 @@
-import Table from "react-bootstrap/Table";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -6,6 +5,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { deleteUser } from "../Reducer";
+import Usertable from "../components/Usertable";
+import Cancel from '../Utils/images/cancel.png';
+ 
 
 function Home() {
   const [show, setShow] = useState(false);
@@ -26,6 +28,34 @@ function Home() {
     handleClose();
   };
 
+  const columns = [
+    {
+      id:1,
+      label:"Name",
+      value:"name"
+    },
+    {
+      id:2,
+      label:"Email",
+      value:"email"
+    },
+    {
+      id:3,
+      label:"Username",
+      value:"username"
+    },
+    {
+      id:4,
+      label:"Mobile",
+      value:"mobile"
+    },
+    {
+      id:5,
+      label:"Rolekey",
+      value:"roleKey"
+    }
+  ]
+
   return (
     <div className="container bg-white">
       <div className="page-title">
@@ -37,56 +67,13 @@ function Home() {
         </Link>
       </div>
       <div className="auto-scroll">
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Username</th>
-              <th>Mobile</th>
-              <th>Role</th>
-              <th className="action-width"> Action</th>
-            </tr>
-          </thead>
-          {users?.length > 0 ? (
-            <tbody>
-              {users.map((user, index) => (
-                <tr key={index}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{user.username}</td>
-                  <td>{user.mobile}</td>
-                  <td>{user.roleKey}</td>
-                  <td>
-                    <div className="action-btn">
-                      <Link to={`/updaterecord/${user.id}`}>
-                        <button type="button" className="btn btn-success mr-10">
-                          Edit
-                        </button>
-                      </Link>
-                      <button
-                        type="button"
-                        className="btn btn-danger"
-                        variant="primary"
-                        onClick={() => handleShow(user.id)}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          ) : (
-            <div className="no-records">No records</div>
-          )}
-        </Table>
+        <Usertable columns={columns} rows={users} modalfunc={handleShow}/>
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
           <div className="delete-icons">
             {" "}
-            <img src="./assets/images/cancel.png" />
+            <img src={Cancel} />
           </div>
           <div className="popup-info">Are you sure?</div>
           <div className="popup-info-m">

@@ -2,7 +2,9 @@ import React from "react";
 import Header from "./components/Header";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Suspense } from "react";
-import "./App.css";
+import "./Utils/style/style.css";
+import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 
 const Home = React.lazy(() => import("./Pages/Home"));
 const Addandupdate = React.lazy(() => import("./Pages/Addandupdate"));
@@ -11,24 +13,30 @@ const router = createBrowserRouter([
   {
     path: "/addrecord",
     element: (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
+        <Header />
         <Addandupdate />
+        <Footer />
       </Suspense>
     ),
   },
   {
     path: "/updaterecord/:id",
     element: (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
+        <Header />
         <Addandupdate />
+        <Footer />
       </Suspense>
     ),
   },
   {
     path: "/",
     element: (
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
+        <Header />
         <Home />
+        <Footer />
       </Suspense>
     ),
   },
@@ -37,7 +45,6 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <Header />
       <RouterProvider router={router} />
     </>
   );
