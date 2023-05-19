@@ -5,9 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteUser } from '../Reducer';
+import { deleteUser } from './Reducer';
 
-function DarkExample() {
+function Home() {
     const [show, setShow] = useState(false);
     const dispatch = useDispatch();
     const [deleteId,setDeleteId] = useState('');
@@ -92,4 +92,4 @@ function DarkExample() {
   );
 }
 
-export default DarkExample;
+export default Home;

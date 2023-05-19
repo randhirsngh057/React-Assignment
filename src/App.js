@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Table from './components/Table';
+import Home from './Home';
 import Header from './components/Header';
 import {
   createBrowserRouter,
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Table />,
+    element: <Home/>,
   },
 ]);
 

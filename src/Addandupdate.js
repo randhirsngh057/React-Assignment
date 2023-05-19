@@ -105,7 +105,7 @@ function Addandupdate() {
    <span  className='error'>{props.errors.password}</span>
  </div>
 <div className='user-form-btn'>
-<button type="submit" className="btn btn-primary">Update</button>
+<button type="submit" className="btn btn-primary">Submit</button>
  </div>
        </Form>
       )}
@@ -154,7 +154,7 @@ function Addandupdate() {
     <span className='error'>{props.errors.password}</span>
   </div>
  <div className='user-form-btn'>
- <button type="submit" className="btn btn-primary">Add</button>
+ <button type="submit" className="btn btn-primary">Submit</button>
   </div>
         </Form>
        )}
